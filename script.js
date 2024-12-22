@@ -52,3 +52,61 @@ document.addEventListener('DOMContentLoaded', () => {
             roundResultElement.textContent += ` - Computer wins! ${computerChoice} beats ${humanChoice}`;
         }
 
+        // Increment rounds
+        roundsPlayed++;
+
+        // Check for game end
+        if (roundsPlayed === 5) {
+            endGame();
+        }
+    }
+
+    // End game logic
+    function endGame() {
+        if (humanScore > computerScore) {
+            gameWinnerElement.textContent = 'Congratulations! You won the game!';
+            gameWinnerElement.style.color = 'green';
+        } else if (computerScore > humanScore) {
+            gameWinnerElement.textContent = 'Computer won the game. Better luck next time!';
+            gameWinnerElement.style.color = 'red';
+        } else {
+            gameWinnerElement.textContent = "It's a draw!";
+            gameWinnerElement.style.color = 'blue';
+        }
+
+        // Disable choices after game ends
+        choices.forEach(choice => choice.style.pointerEvents = 'none');
+    }
+
+    // Reset game
+    function resetGame() {
+        humanScore = 0;
+        computerScore = 0;
+        roundsPlayed = 0;
+        
+        humanScoreElement.textContent = '0';
+        computerScoreElement.textContent = '0';
+        roundResultElement.textContent = 'Make your choice!';
+        gameWinnerElement.textContent = '';
+        gameWinnerElement.style.color = 'black';
+
+        // Re-enable choices
+        choices.forEach(choice => choice.style.pointerEvents = 'auto');
+    }
+
+    // Event listeners for player choices
+    choices.forEach(choice => {
+        choice.addEventListener('click', () => {
+            const humanChoice = choice.dataset.choice;
+            const computerChoice = getComputerChoice();
+            playRound(humanChoice, computerChoice);
+        });
+    });
+
+    // Reset button event listener
+    if (resetButton) {
+        resetButton.addEventListener('click', resetGame);
+    } else {
+        console.error('Reset button not found');
+    }
+});
