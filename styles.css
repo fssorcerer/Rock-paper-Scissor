@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.game-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.score {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    width: 45%;
+}
+
+.score h2 {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.score p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.game-choices {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.choice {
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 30%;
+    transition: all 0.3s ease;
+}
+
+.choice:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+}
+
+.choice img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.choice span {
+    display: block;
+    color: #333;
+    font-weight: bold;
+}
+
+.result-display {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#round-result {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+#game-winner {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#reset-game {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reset-game:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        padding: 20px;
+        margin: 0 15px;
+    }
+
+    .game-choices {
+        flex-direction: column;
+    }
+
+    .choice {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
