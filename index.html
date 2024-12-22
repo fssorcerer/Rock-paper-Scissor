@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="game-container">
+        <h1>Rock Paper Scissors</h1>
+        
+        <div class="score-board">
+            <div class="score human-score">
+                <h2>Your Score</h2>
+                <p id="human-score">0</p>
+            </div>
+            <div class="score computer-score">
+                <h2>Computer Score</h2>
+                <p id="computer-score">0</p>
+            </div>
+        </div>
+
+        <div class="game-choices">
+            <div class="choice" data-choice="rock">
+                <i class="em em-facepunch" aria-role="presentation" aria-label="FISTED HAND SIGN"></i>
+                <span>Rock</span>
+            </div>
+            <div class="choice" data-choice="paper">
+                <i class="em em-raised_hand_with_fingers_splayed" aria-role="presentation" aria-label=""></i>
+                <span>Paper</span>
+            </div>
+            <div class="choice" data-choice="scissor">
+                <i class="em em-v" aria-role="presentation" aria-label="VICTORY HAND"></i>
+                <span>Scissors</span>
+            </div>
+        </div>
+
+        <div class="result-display">
+            <p id="round-result">Make your choice!</p>
+            <p id="game-winner"></p>
+        </div>
+
+        <button id="reset-game">Reset Game</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
